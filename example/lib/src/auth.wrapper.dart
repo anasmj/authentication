@@ -1,8 +1,8 @@
 import 'package:authentication/authentication.dart';
-import 'package:example/src/home.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
+import 'home.dart';
 import 'providers/auth.provider.dart';
 
 class AuthWrapper extends ConsumerWidget {
@@ -13,7 +13,7 @@ class AuthWrapper extends ConsumerWidget {
     return ref.watch(authProvider).when(
           data: (user) {
             return user != null
-                ? Home(onLogout: () =>  ref.read(authProvider.notifier).logout())
+                ? Home(onLogout: () => ref.read(authProvider.notifier).logout())
                 : const AuthPage();
           },
           error: (e, s) => const SizedBox(),

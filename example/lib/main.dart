@@ -1,12 +1,8 @@
-import 'package:example/src/auth.wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../src/auth.wrapper.dart';
 
-void main() {
-  runApp(
-    const ProviderScope(child: MyApp()),
-  );
-}
+void main() => runApp(const ProviderScope(child: MyApp()));
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
